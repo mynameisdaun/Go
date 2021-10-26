@@ -1,7 +1,13 @@
 package main
 
 import "fmt"
+//iota starts with 0, reassigned whenever called in ()
+
 
 func main() {
-	fmt.Println("I will be go master!")
+
+	const Gravity = 9.80665
+	
+
+
 }
