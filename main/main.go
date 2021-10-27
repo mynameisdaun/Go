@@ -1,33 +1,37 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
+func ToUpper1(str string) string {
+	var rst string
+	for _, c := range str {
+		if c >= 'a' && c <= 'z' {
+			rst += string('A' + ( c-'a'))
+		} else {
+			rst += string(c)
+		}
+	}
+	return rst
+}
+
+func ToUpper2(str string) string {
+	var builder strings.Builder
+	for _, c := range str {
+		if c >= 'a' && c <= 'z' {
+			builder.WriteRune('A'+(c-'a'))
+		} else {
+			builder.WriteRune(c)
+		}
+	}
+	return builder.String()
+}
 
 
 func main() {
 	
-	//Go String!
-	var char rune = '정'
-	fmt.Printf("%T\n", char)	
-	fmt.Printf("%c\n", char)
-	fmt.Println(char)
-
-	str1 := "가나다라마"
-	str2 := "abcde"
-	fmt.Println("==============================================")
-	fmt.Println(len(str1))
-	fmt.Println(len(str2))
-
-	str := "Hello World"
-	runes := []rune{72, 101, 108, 108, 111, 32, 87,111,114,108,100}
-	fmt.Println("==============================================")
-	fmt.Println(str)
-	fmt.Println(string(runes))
-
-	newstr := "안녕 나는 정다운입니다. haha~"
-	newrunes := []rune(newstr)
-
-	fmt.Println(len(newstr))
-	fmt.Println(len(newrunes))
+	fmt.Println(ToUpper1("hihi"))
 
 }
